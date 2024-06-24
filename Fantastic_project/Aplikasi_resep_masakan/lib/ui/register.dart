@@ -162,7 +162,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context
+                      .read<RegisterCubit>()
+                      .register(email: emailEdc.text, password: passEdc.text);
+                },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   backgroundColor: const Color.fromRGBO(26, 77, 46, 1),
